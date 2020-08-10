@@ -1,0 +1,66 @@
+{
+  "name": "smartrade-core",
+  "version": "0.1.0-beta",
+  "description": "SmarTrade Core Smart Contracts, building for business trading",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "test:verbose": "truffle test --compile-all-debug --show-events",
+    "test:coverage": "truffle run coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:sol": "solium -d .",
+    "lint:sol:fix": "solium -d . --fix",
+    "lint:all": "npm run lint && npm run lint:sol",
+    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
+    "compile": "truffle compile --network=development --all",
+    "ganache-cli": "ganache-cli --networkId 5777 --port 7545 --gasLimit 6721975 --hardfork muirGlacier",
+    "migrate:local": "truffle migrate --network=development --reset --compile-all",
+    "migrate:local:express": "truffle migrate --network=development --reset",
+    "migrate:ropsten": "truffle migrate --network=ropsten --reset --compile-all",
+    "migrate:mainnet": "truffle migrate --network=mainnet",
+    "flatten": "sol-merger \"./contracts/*.sol\" ./build",
+    "tf:console": "truffle console",
+    "tf:version": "truffle version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/james-chien/smartrade"
+  },
+  "keywords": [
+    "smart",
+    "contracts",
+    "solidity",
+    "ethereum",
+    "ERC20",
+    "ERC721",
+    "ERC725",
+    "ERC1417"
+  ],
+  "author": "James Chien",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/james-chien/smartrade/issues"
+  },
+  "homepage": "https://github.com/james-chien/smartrade#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "@truffle/hdwallet-provider": "^1.0.40",
+    "lodash": "^4.17.19",
+    "solc": "^0.6.12",
+    "truffle": "^5.1.39",
+    "web3": "^1.2.11"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "eslint": "^7.6.0",
+    "ethlint": "^1.2.5",
+    "ganache-cli": "^6.10.1",
+    "mocha": "^8.1.1",
+    "sol-merger": "^3.1.0",
+    "solidity-coverage": "^0.7.9"
+  }
+}

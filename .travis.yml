@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - 12
+
+cache:
+  directories:
+  - node_modules
+
+jobs:
+  include:
+    - stage: Test
+      install:
+        - yarn install
+      before_script:
+        - truffle version
+      script:
+        - ganache-cli --networkId 5777 --port 7545 --gasLimit 6721975 --hardfork muirGlacier &
+        - truffle test
