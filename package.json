@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/james-chien/smartrade#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/contracts": "^4.4.2",
     "@truffle/hdwallet-provider": "^1.0.40",
     "lodash": "^4.17.19",
     "solc": "^0.6.12",
